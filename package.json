@@ -1,0 +1,58 @@
+{
+	"name": "function-benchmark-util",
+	"version": "0.0.1",
+	"description": "A library to benchmark javascript functions.",
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"browser": "dist/index.bundle.js",
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "rollup -c && tsc && npm run doc",
+		"build:watch": "rollup -cw",
+		"doc": "typedoc --out doc/ --includes src/** --readme README.md --mode file --name 'Function Benchmark Util'",
+		"verify": "npm run build && npm run test:ci",
+		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+		"lint": "tslint -p tsconfig.json",
+		"test": "jest --config jestconfig.json --coverage",
+		"prepare": "npm run build",
+		"prepublishOnly": "npm test && npm run lint",
+		"preversion": "npm run lint",
+		"version": "npm run format && git add -A src",
+		"postversion": "git push && git push --tags"
+	},
+	"devDependencies": {
+		"@types/jest": "^25.1.2",
+		"jest": "^25.1.0",
+		"prettier": "^1.19.1",
+		"rollup": "^1.31.1",
+		"rollup-plugin-delete": "^1.2.0",
+		"rollup-plugin-terser": "^5.2.0",
+		"rollup-plugin-typescript2": "^0.26.0",
+		"ts-jest": "^25.2.1",
+		"ts-node": "^8.6.2",
+		"tslint": "^6.0.0",
+		"tslint-config-prettier": "^1.18.0",
+		"typedoc": "^0.16.10",
+		"typescript": "^3.7.5"
+	},
+	"dependencies": {},
+	"keywords": [
+		"NPM",
+		"TypeScript",
+		"JavaScript",
+		"function",
+		"benchmark"
+	],
+	"author": "Cengiz Can <cengiz@linux.com>",
+	"license": "MIT",
+	"bugs": "https://github.com/cengizcan/function-benchmark-util/issues",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cengizcan/function-benchmark-util.git"
+	},
+	"private": false
+}
