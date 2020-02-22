@@ -29,7 +29,7 @@ export default {
 		}),
 		terser(),
 		del({
-			targets: ['dist/*', 'doc/*']
+			targets: ['dist/*', 'docs/*']
 		})
 	]
 };

@@ -13,7 +13,7 @@
 	"scripts": {
 		"build": "rollup -c && tsc && npm run doc",
 		"build:watch": "rollup -cw",
-		"doc": "typedoc --out doc/ --includes src/** --readme README.md --mode file --name 'Function Benchmark Util'",
+		"doc": "typedoc --out docs/ --includes src/** --readme README.md --mode file --name 'Function Benchmark Util'",
 		"verify": "npm run build && npm run test:ci",
 		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
 		"lint": "tslint -p tsconfig.json",
