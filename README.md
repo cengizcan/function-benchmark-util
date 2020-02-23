@@ -2,7 +2,7 @@
 ![GitHub](https://img.shields.io/github/license/cengizcan/function-benchmark-util?style=flat-square) ![npm type definitions](https://img.shields.io/npm/types/function-benchmark-util?style=flat-square)
 
 A library to benchmark JavaScript functions with microsecond precision.
-> [Docs](https://cengizcan.github.io/function-benchmark-util/) | [Github](https://github.com/cengizcan/function-benchmark-util) | [NPM](https://www.npmjs.com/package/function-benchmark-util)
+[Docs](https://cengizcan.github.io/function-benchmark-util/)  |  [Github](https://github.com/cengizcan/function-benchmark-util)  |  [NPM](https://www.npmjs.com/package/function-benchmark-util)
 
 **Install**
 ```bash
@@ -41,7 +41,7 @@ Intentionally `benchmark` and `benchmarkTimes` functions set `this` context of t
 
 If you need to set `this`, use `benchmarkWithThis` and for multiple executions, use `benchmarkTimesWithThis`.
 
-For more, see the [documentaion](https://cengizcan.github.io/function-benchmark-util/) and [examples](https://github.com/cengizcan/function-benchmark-util/blob/master/examples/index.js).
+For more, see the [documentation](https://cengizcan.github.io/function-benchmark-util/) and [examples](https://github.com/cengizcan/function-benchmark-util/blob/master/examples/index.js).
 
 # License
 
