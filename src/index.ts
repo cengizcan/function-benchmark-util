@@ -1,29 +1,29 @@
 interface BenchmarkResult {
 	/**
-  * Executed functions name
-  */
-	functionName: string,
+	 * Executed functions name
+	 */
+	functionName: string;
 	/**
-  * Execution count
-  */
-	runCount: number,
+	 * Execution count
+	 */
+	runCount: number;
 	/**
-  * Minimum duration scored in  microseconds
-  */
-	min: number,
+	 * Minimum duration scored in  microseconds
+	 */
+	min: number;
 	/**
-  * Maximum duration scored in  microseconds
-  */
-	max: number,
+	 * Maximum duration scored in  microseconds
+	 */
+	max: number;
 	/**
-  * The average duration of all executions in  microseconds
-  */
-	average: number,
+	 * The average duration of all executions in  microseconds
+	 */
+	average: number;
 	/**
-		* Return value of the latest execution
-  */
-	fnReturns?: any,
-};
+	 * Return value of the latest execution
+	 */
+	fnReturns?: any;
+}
 
 /**
  * Benchmark a function only once with its parameters and sets this context to `null`.
@@ -53,7 +53,7 @@ export function benchmarkWithThis(fn: any, thisContext: object, params?: any[]):
  * @param params - Parameters of function as an `array`
  * @returns {BenchmarkResult}
  */
-export function benchmarkTimes(fn: any, times:number, params: any[]): BenchmarkResult {
+export function benchmarkTimes(fn: any, times: number, params: any[]): BenchmarkResult {
 	return benchmarkTimesWithThis(fn, times, undefined, params);
 }
 
@@ -70,9 +70,9 @@ export function benchmarkTimesWithThis(fn: any, times: number, thisContext: obje
 	let total = 0;
 	let max = 0;
 	let min = Number.MAX_SAFE_INTEGER;
-	for(let i = 1; i <= times; i++) {
+	for (let i = 1; i <= times; i++) {
 		const start = tsInMicroseconds();
-		
+
 		const ret = fn.apply(thisContext, params);
 		const duration = tsInMicroseconds() - start;
 		total += duration;
@@ -93,25 +93,25 @@ export function benchmarkTimesWithThis(fn: any, times: number, thisContext: obje
 /**
  * @ignore
  */
-export function tsInMicroseconds():number {
+export function tsInMicroseconds(): number {
 	let now: number;
 	if (global?.process?.hrtime) {
 		const hrt = process.hrtime();
-		now = (1E9 * hrt[0] + hrt[1]) / 1E3;
+		now = (1e9 * hrt[0] + hrt[1]) / 1e3;
 	} else if (window?.performance?.now) {
-		now = 1E3 * performance.now();
+		now = 1e3 * performance.now();
 	} else {
 		// tslint:disable-next-line: no-console
 		console?.error('Benchmark time precision is in millisecons due to the unrecognized environment!');
-		now = 1E3 * Date.now();
+		now = 1e3 * Date.now();
 	}
 	return now;
 }
 /**
  * @ignore
  */
-function microToMilli(num:number, precision: number): number {
-	return Math.round(num / 1E3 * Math.pow(10, precision)) / Math.pow(10, precision);
+function microToMilli(num: number, precision: number): number {
+	return Math.round((num / 1e3) * Math.pow(10, precision)) / Math.pow(10, precision);
 }
 /**
  * Converts microsecond time values to milliseconds in a given `BenchmarkResult` object. Does not mutates the input.
@@ -119,10 +119,10 @@ function microToMilli(num:number, precision: number): number {
  * @param precision - Precision digits. Default value is 2
  * @returns {BenchmarkResult}
  */
-export function convertTimeToMilliseconds(benchmarkResult:BenchmarkResult, precision: number = 2): BenchmarkResult {
-	return Object.assign({}, benchmarkResult, { 
+export function convertTimeToMilliseconds(benchmarkResult: BenchmarkResult, precision: number = 2): BenchmarkResult {
+	return Object.assign({}, benchmarkResult, {
 		min: microToMilli(benchmarkResult.min, precision),
 		max: microToMilli(benchmarkResult.max, precision),
-		average: microToMilli(benchmarkResult.average, precision)
+		average: microToMilli(benchmarkResult.average, precision),
 	});
 }
