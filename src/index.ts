@@ -103,7 +103,7 @@ export function tsInMicroseconds():number {
 	} else {
 		// tslint:disable-next-line: no-console
 		console?.error('Benchmark time precision is in millisecons due to the unrecognized environment!');
-		now = Date.now() * 1E3;
+		now = 1E3 * Date.now();
 	}
 	return now;
 }
