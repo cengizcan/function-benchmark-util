@@ -2,6 +2,7 @@
 ![GitHub](https://img.shields.io/github/license/cengizcan/function-benchmark-util?style=flat-square) ![npm type definitions](https://img.shields.io/npm/types/function-benchmark-util?style=flat-square)
 
 A library to benchmark JavaScript functions with microsecond precision.
+
 [Docs](https://cengizcan.github.io/function-benchmark-util/)  |  [Github](https://github.com/cengizcan/function-benchmark-util)  |  [NPM](https://www.npmjs.com/package/function-benchmark-util)
 
 **Install**
