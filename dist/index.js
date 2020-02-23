@@ -64,8 +64,7 @@ export function benchmarkTimesWithThis(fn, times, thisContext, params) {
     return result;
 }
 /**
- * Returns timestamp in microseconds regardless of environment. Do not use as a replacement for `Date.now()`!
- * @returns timestamp in microseconds
+ * @ignore
  */
 export function tsInMicroseconds() {
     var _a, _b, _c, _d, _e;
@@ -85,10 +84,7 @@ export function tsInMicroseconds() {
     return now;
 }
 /**
- * Converts microseconds to milliseconds
- * @param num - Number in microseconds
- * @param precision - Precision digits for return value
- * @returns Milliseconds
+ * @ignore
  */
 function microToMilli(num, precision) {
     return Math.round(num / 1E3 * Math.pow(10, precision)) / Math.pow(10, precision);

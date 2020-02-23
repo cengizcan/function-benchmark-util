@@ -57,8 +57,7 @@ export declare function benchmarkTimes(fn: any, times: number, params: any[]): B
  */
 export declare function benchmarkTimesWithThis(fn: any, times: number, thisContext: object, params?: any[]): BenchmarkResult;
 /**
- * Returns timestamp in microseconds regardless of environment. Do not use as a replacement for `Date.now()`!
- * @returns timestamp in microseconds
+ * @ignore
  */
 export declare function tsInMicroseconds(): number;
 /**

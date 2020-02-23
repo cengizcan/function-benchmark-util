@@ -6,8 +6,7 @@
 .rpt2_cache/
 *.idea/
 *.iml
-dist/src
-dist/tests
+dist
 
 ### Node ###
 # Logs
