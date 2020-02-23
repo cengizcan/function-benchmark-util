@@ -2389,14 +2389,78 @@ img {
 <div class="container container-main">
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
-			<a href="#todo" id="todo" style="color: inherit; text-decoration: none;">
-				<h1>todo</h1>
+			<a href="#javascript-function-benchmark-utility" id="javascript-function-benchmark-utility" style="color: inherit; text-decoration: none;">
+				<h1>JavaScript Function Benchmark Utility</h1>
 			</a>
-			<ul>
-				<li>jest tests</li>
-				<li>readme</li>
-				<li>circle ci</li>
-			</ul>
+			<p><img src="https://img.shields.io/github/license/cengizcan/function-benchmark-util?style=flat-square" alt="GitHub"> <img src="https://img.shields.io/npm/types/function-benchmark-util?style=flat-square" alt="npm type definitions"></p>
+			<p>A library to benchmark JavaScript functions with microsecond precision.</p>
+			<blockquote>
+				<p><a href="https://cengizcan.github.io/function-benchmark-util/">Docs</a> | <a href="https://github.com/cengizcan/function-benchmark-util">Github</a> | <a href="https://www.npmjs.com/package/function-benchmark-util">NPM</a></p>
+			</blockquote>
+			<p><strong>Install</strong></p>
+			<pre><code class="language-bash">npm i <span class="hljs-keyword">function</span>-benchmark-util -D</code></pre>
+			<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+				<h2>Usage</h2>
+			</a>
+			<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { benchmark, benchmarkTimes } <span class="hljs-keyword">from</span> <span class="hljs-string">'function-benchmark-util'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">someFunction</span>(<span class="hljs-params">param1, param2</span>) </span>{
+    <span class="hljs-comment">// Does something</span>
+};
+
+<span class="hljs-keyword">const</span> result1 = benchmark(someFunction, [<span class="hljs-string">'param1'</span>, <span class="hljs-string">'param2'</span>]);
+
+<span class="hljs-comment">// Running multiple iterations</span>
+<span class="hljs-keyword">const</span> result2 = benchmarkTimes(someFunction, <span class="hljs-number">10</span>, [<span class="hljs-string">'param1'</span>, <span class="hljs-string">'param2'</span>]);
+<span class="hljs-comment">// See the results</span>
+<span class="hljs-built_in">console</span>.table([result1, result2]);</code></pre>
+			<a href="#codebenchmarkresultcode-object" id="codebenchmarkresultcode-object" style="color: inherit; text-decoration: none;">
+				<h3><code>BenchmarkResult</code> object</h3>
+			</a>
+			<p>All benchmark functions, including <code>benchmark</code>, <code>benchmarkTimes</code>, <code>benchmarkWithThis</code>,<code>benchmarkTimesWithThis</code> return a <code>BenchmarkResult</code> object.</p>
+			<table>
+				<thead>
+					<tr>
+						<th align="right">Field</th>
+						<th align="left">Description</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+						<td align="right">functionName</td>
+						<td align="left"><code>string</code> Name of the executed function</td>
+					</tr>
+					<tr>
+						<td align="right">runCount</td>
+						<td align="left"><code>number</code> Execution count passed to <code>benchmarkTimes</code> and <code>benchmarkTimesWithThis</code> functions.</td>
+					</tr>
+					<tr>
+						<td align="right">min</td>
+						<td align="left"><code>number</code> Minimum duration scored in  microseconds</td>
+					</tr>
+					<tr>
+						<td align="right">max</td>
+						<td align="left"><code>number</code> Maximum duration scored in  microseconds</td>
+					</tr>
+					<tr>
+						<td align="right">average</td>
+						<td align="left"><code>number</code> The average duration of all executions in  microseconds</td>
+					</tr>
+					<tr>
+						<td align="right">fnReturns</td>
+						<td align="left"><code>any</code> Latest returned function result during execution(s)</td>
+					</tr>
+			</tbody></table>
+			<a href="#codethiscode-context" id="codethiscode-context" style="color: inherit; text-decoration: none;">
+				<h3><code>this</code> context</h3>
+			</a>
+			<p>Intentionally <code>benchmark</code> and <code>benchmarkTimes</code> functions set <code>this</code> context of the executed function to <code>null</code> to avoid ambiguity.</p>
+			<p>If you need to set <code>this</code>, use <code>benchmarkWithThis</code> and for multiple executions, use <code>benchmarkTimesWithThis</code>.</p>
+			<p>For more, see the <a href="https://cengizcan.github.io/function-benchmark-util/">documentaion</a> and <a href="https://github.com/cengizcan/function-benchmark-util/blob/master/examples/index.js">examples</a>.</p>
+			<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+				<h1>License</h1>
+			</a>
+			<p>MIT © Cengiz Can</p>
+			<p><img src="https://img.shields.io/david/cengizcan/function-benchmark-util?style=flat-square" alt="David"> <img src="https://img.shields.io/david/dev/cengizcan/function-benchmark-util?style=flat-square" alt="David"> <img src="https://img.shields.io/bundlephobia/minzip/function-benchmark-util?style=flat-square" alt="npm bundle size"></p>
 		</div>
 		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
 		<section class="tsd-panel-group tsd-index-group">
@@ -2434,7 +2498,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/cengizcan/function-benchmark-util/blob/e719fd9/src/index.ts#L34">index.ts:34</a></li>
+								<li>Defined in <a href="https://github.com/cengizcan/function-benchmark-util/blob/db72372/src/index.ts#L34">index.ts:34</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2471,7 +2535,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/cengizcan/function-benchmark-util/blob/e719fd9/src/index.ts#L56">index.ts:56</a></li>
+								<li>Defined in <a href="https://github.com/cengizcan/function-benchmark-util/blob/db72372/src/index.ts#L56">index.ts:56</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2514,7 +2578,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/cengizcan/function-benchmark-util/blob/e719fd9/src/index.ts#L68">index.ts:68</a></li>
+								<li>Defined in <a href="https://github.com/cengizcan/function-benchmark-util/blob/db72372/src/index.ts#L68">index.ts:68</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2563,7 +2627,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/cengizcan/function-benchmark-util/blob/e719fd9/src/index.ts#L45">index.ts:45</a></li>
+								<li>Defined in <a href="https://github.com/cengizcan/function-benchmark-util/blob/db72372/src/index.ts#L45">index.ts:45</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2606,7 +2670,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/cengizcan/function-benchmark-util/blob/e719fd9/src/index.ts#L122">index.ts:122</a></li>
+								<li>Defined in <a href="https://github.com/cengizcan/function-benchmark-util/blob/db72372/src/index.ts#L122">index.ts:122</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
