@@ -28,7 +28,7 @@ console.table([result1, result2]);
 ###  `BenchmarkResult` object
 All benchmark functions, including `benchmark`, `benchmarkTimes`, `benchmarkWithThis`,`benchmarkTimesWithThis` return a `BenchmarkResult` object.
 
-| Field | Description |
+| Property | `type` & Description |
 |------:|:------------|
 | functionName |`string` Name of the executed function |
 | runCount | `number` Execution count passed to `benchmarkTimes` and `benchmarkTimesWithThis` functions. |
@@ -49,3 +49,5 @@ For more, see the [documentation](https://cengizcan.github.io/function-benchmark
 MIT © Cengiz Can
 
 ![David](https://img.shields.io/david/cengizcan/function-benchmark-util?style=flat-square) ![David](https://img.shields.io/david/dev/cengizcan/function-benchmark-util?style=flat-square) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/function-benchmark-util?style=flat-square)
+
+TODO: improve docs and examples.
